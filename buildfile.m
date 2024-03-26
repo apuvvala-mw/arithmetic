@@ -10,7 +10,7 @@ c = onCleanup(@()path(origPath));
 
 plan("clean") = CleanTask;
 plan("check") = CodeIssuesTask;
-plan("test") = TestTask(SourceFiles="src");
+plan("test") = TestTask(SourceFiles="src", TestResult="results\result.mat");
 % plan("test") = TestTask();
 % plan("test") = TestTask("tests\T1.m", SourceFiles="src");
 
