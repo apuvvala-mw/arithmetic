@@ -12,7 +12,7 @@ classdef T3 < matlab.unittest.TestCase
         % Test methods
 
         function unimplementedTest(testCase)
-            s_divide(1,2);
+            testCase.verifyEqual(s_divide(1,2), 0.5);
         end
     end
 
