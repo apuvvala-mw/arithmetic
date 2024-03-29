@@ -12,7 +12,7 @@ c = onCleanup(@()path(origPath));
 plan("clean") = CleanTask;
 plan("check") = CodeIssuesTask;
 
-plan("test") = TestTask(SourceFiles="src", CodeCoverageResults="results/cov.html");
+plan("test") = TestTask(SourceFiles="src", CodeCoverageResults="results/cov.xml");
 % plan("test") = TestTask();
 % plan("test") = TestTask("tests\T1.m", SourceFiles="src");
 
