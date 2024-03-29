@@ -11,7 +11,7 @@ classdef T4 < matlab.unittest.TestCase
     methods (Test)
         % Test methods
 
-        function unimplementedTest(testCase)
+        function positive(testCase)
             testCase.verifyEqual(s_subtract(1,0), 1);
         end
     end
