@@ -12,13 +12,13 @@ c = onCleanup(@()path(origPath));
 plan("clean") = CleanTask;
 plan("check") = CodeIssuesTask;
 
-plan("test") = TestTask(SourceFiles="src");
+plan("test") = TestTask(SourceFiles="src", CodeCoverageResults="results/cov.html");
 % plan("test") = TestTask();
 % plan("test") = TestTask("tests\T1.m", SourceFiles="src");
 
-proj = matlab.project.loadProject(pwd);
-modifiedFiles = proj.listModifiedFiles();
-plan("prequalify") = TestTask(SourceFiles=[modifiedFiles.Path]);
+% proj = matlab.project.loadProject(pwd);
+% modifiedFiles = proj.listModifiedFiles();
+% plan("prequalify") = TestTask(SourceFiles=[modifiedFiles.Path]);
 
 plan.DefaultTasks = ["check" "test"];
 end
