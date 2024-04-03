@@ -42,6 +42,8 @@ jobs:
                 .buildtool
             key: ${{ runner.os }}-buildtool-cache${{ github.ref }}
 
+      - name: List contents of .buildtool
+        run: ls -la .buildtool
       
       # Run MATLAB build
       - name: Run the default "test" task in the build file
