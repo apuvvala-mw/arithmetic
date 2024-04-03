@@ -42,6 +42,7 @@ jobs:
         with:
             path: |
                 .buildtool
+                results
             key: ${{ runner.os }}-buildtool-cache-${{ github.ref }}
 
       # Run MATLAB build
