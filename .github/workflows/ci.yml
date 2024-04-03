@@ -38,8 +38,12 @@ jobs:
         id: task-traces-restore
         uses: actions/cache/restore@v4
         with:
-            path: ./.buildtool
-            key: ${{ runner.os }}-buildtool
+            path: .buildtool
+            key: ${{ runner.os }}-buildtool-${{ hashFiles('.buildtool') }}
+            restore-keys: |
+                ${{ runner.os }}-buildtool-${{ hashFiles('.buildtool') }}
+                ${{ runner.os }}-buildtool-
+
       
       # Run MATLAB build
       - name: Run the default "test" task in the build file
@@ -49,7 +53,7 @@ jobs:
         id: task-traces-save
         uses: actions/cache/save@v4
         with:
-            path: ./.buildtool
+            path: .buildtool
             key: ${{ steps.task-traces-restore.outputs.cache-primary-key }}
 
             # You can use "run-command" to execute custom MATLAB scripts, functions, or statements
