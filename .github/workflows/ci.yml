@@ -39,7 +39,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
             path: .buildtool
-            key: ${{ runner.os }}-buildtool-${{ hashFiles('.buildtool') }}
+            key: ${{ runner.os }}-buildtool-${{ hashFiles('buildfile.m') }}
             restore-keys: |
                 ${{ runner.os }}-buildtool-
 
