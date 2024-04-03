@@ -41,7 +41,6 @@ jobs:
             path: .buildtool
             key: ${{ runner.os }}-buildtool-${{ hashFiles('.buildtool') }}
             restore-keys: |
-                ${{ runner.os }}-buildtool-${{ hashFiles('.buildtool') }}
                 ${{ runner.os }}-buildtool-
 
       
