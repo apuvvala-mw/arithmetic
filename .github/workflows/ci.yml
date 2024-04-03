@@ -45,6 +45,11 @@ jobs:
       - name: List contents of .buildtool
         run: ls -la .buildtool/**/*
       
+      - name: Lookup test task trace
+        uses: matlab-actions/run-command@v2
+        with:
+          command: lookUpTestTaskTrace
+
       # Run MATLAB build
       - name: Run the default "test" task in the build file
         uses: matlab-actions/run-build@v2
