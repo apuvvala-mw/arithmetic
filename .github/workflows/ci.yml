@@ -38,7 +38,7 @@ jobs:
 
       - name: Cache buildtool artifacts
         id: buildtool-cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache@v4
         with:
             path: |
                 .buildtool
@@ -56,15 +56,7 @@ jobs:
       #  with:
       #    command: lookUpTestTaskTrace
         
-      - name: Save task traces
-        id: buildtool-cache-save
-        uses: actions/cache/save@v4
-        with:
-            path: |
-                .buildtool
-            key: ${{ runner.os }}-buildtool-cache-${{ github.ref }}
-
-            # You can use "run-command" to execute custom MATLAB scripts, functions, or statements
+      # You can use "run-command" to execute custom MATLAB scripts, functions, or statements
       #- name: Run custom testing procedure
       #  uses: matlab-actions/run-command@v2
       #  with:
