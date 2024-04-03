@@ -39,7 +39,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
             path: ./.buildtool
-            key: ${{ runner.os }}-buildtool
+            key: ${{ runner.os }}-buildtool-${{ hashFiles('**/lockfiles') }}
       
       # Run MATLAB build
       - name: Run the default "test" task in the build file
