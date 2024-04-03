@@ -34,19 +34,25 @@ jobs:
       #  with:
       #    source-folder: code
 
-      - name: Cache .buildtool
-        uses: actions/cache@v2
+      - name: Download task traces
+        id: task-traces-restore
+        uses: actions/cache/restore@v4
         with:
             path: ./.buildtool
-            key: ${{ runner.os }}-buildtool-${{ hashFiles('**/lockfiles') }}
-            restore-keys: |
-              ${{ runner.os }}-buildtool-
+            key: ${{ runner.os }}-buildtool
       
       # Run MATLAB build
       - name: Run the default "test" task in the build file
         uses: matlab-actions/run-build@v2
              
-      # You can use "run-command" to execute custom MATLAB scripts, functions, or statements
+      - name: Save task traces
+        id: task-traces-save
+        uses: actions/cache/save@v4
+        with:
+            path: ./.buildtool
+            key: ${{ steps.task-traces-restore.outputs.cache-primary-key }}
+
+            # You can use "run-command" to execute custom MATLAB scripts, functions, or statements
       #- name: Run custom testing procedure
       #  uses: matlab-actions/run-command@v2
       #  with:
