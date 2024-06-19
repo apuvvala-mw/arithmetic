@@ -8,5 +8,5 @@ c = onCleanup(@()path(origPath));
 
 plan("clean") = CleanTask;
 plan("test") = TestTask(SourceFiles="src");
-plan.DefaultTasks = "test"
+plan.DefaultTasks = "test";
 end
