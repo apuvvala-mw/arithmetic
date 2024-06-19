@@ -1,4 +1,4 @@
-classdef T1 < matlab.unittest.TestCase
+classdef Tadd < matlab.unittest.TestCase
 
     methods (Test)
         function s_add_doubles(testCase)

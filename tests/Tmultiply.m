@@ -1,4 +1,4 @@
-classdef T2 < matlab.unittest.TestCase
+classdef Tmultiply < matlab.unittest.TestCase
 
     methods (Test)
         function s_multiply_doubles(testCase)

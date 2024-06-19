@@ -1,4 +1,4 @@
-classdef Tdivide < matlab.unittest.TestCase
+classdef Tcalculator < matlab.unittest.TestCase
 
     methods (TestClassSetup)
         % Shared setup for the entire test class
@@ -11,8 +11,8 @@ classdef Tdivide < matlab.unittest.TestCase
     methods (Test)
         % Test methods
 
-        function unimplementedTest(testCase)
-            testCase.verifyEqual(s_divide(1,2), 0.5);
+        function one(testCase)
+            testCase.verifyEqual(calculate(), 0);
         end
     end
 

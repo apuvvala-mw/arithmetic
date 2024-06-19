@@ -1,4 +1,4 @@
-classdef T4 < matlab.unittest.TestCase
+classdef Tsubtract < matlab.unittest.TestCase
 
     methods (TestClassSetup)
         % Shared setup for the entire test class
