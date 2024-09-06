@@ -27,12 +27,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Perform npm tasks
-        run: npm run ci
-      
       # Sets up MATLAB on a GitHub-hosted runner
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v2
