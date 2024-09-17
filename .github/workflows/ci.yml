@@ -57,6 +57,11 @@ jobs:
           tasks: check test
           build-options: -parallel
 
+      - name: Upload SARIF report
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results/issues.sarif
+          
       #- name: List contents of .buildtool
       #  run: ls -la .buildtool/**/*
       
