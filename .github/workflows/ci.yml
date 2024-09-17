@@ -66,10 +66,11 @@ jobs:
         with:
           sarif_file: issues.sarif
           
-    - uses: actions/upload-artifact@v4
-      with:
-        name: SARIF report
-        path: issues.sarif
+      - name: Upload SARIF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: SARIF report
+          path: issues.sarif
     
     #- name: List contents of .buildtool
       #  run: ls -la .buildtool/**/*
