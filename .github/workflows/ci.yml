@@ -54,7 +54,7 @@ jobs:
       - name: Run the default "test" task in the build file
         uses: matlab-actions/run-build@v2
         with:
-          tasks: test
+          tasks: check test
           build-options: -parallel
 
       #- name: List contents of .buildtool
