@@ -39,11 +39,11 @@ jobs:
             products: ${{ env.PRODUCT_LIST }}
 
       # Runs a set of commands using the runners shell
-      - name: Run all tests
-        uses: matlab-actions/run-tests@v2
-        with:
-          source-folder: src
-          use-parallel: true
+      #- name: Run all tests
+      #  uses: matlab-actions/run-tests@v2
+      #  with:
+      #    source-folder: src
+      #    use-parallel: true
 
       - name: Cache buildtool artifacts
         id: buildtool-cache
@@ -59,7 +59,7 @@ jobs:
         uses: matlab-actions/run-build@v2
         with:
           tasks: check test
-          build-options: -parallel
+          #build-options: -parallel
 
       - name: Upload SARIF report
         uses: github/codeql-action/upload-sarif@v2
