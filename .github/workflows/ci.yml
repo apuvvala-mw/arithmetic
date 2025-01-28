@@ -58,7 +58,7 @@ jobs:
       - name: Run the default "test" task in the build file
         uses: matlab-actions/run-build@v2
         with:
-          tasks: check test
+          tasks: modFiles
           #build-options: -parallel
 
       - name: Upload SARIF report

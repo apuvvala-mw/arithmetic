@@ -13,6 +13,6 @@ plan.DefaultTasks = ["modFiles" "check" "test"];
 end
 
 function modFilesTask(ctx)
-repo = matlab.git.GitRepository;
+repo = matlab.git.GitRepository
 disp(repo.ModifiedFiles)
 end
