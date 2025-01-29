@@ -14,7 +14,10 @@ c = onCleanup(@()path(origPath));
 
 plan("clean") = CleanTask;
 plan("check") = CodeIssuesTask(Results="issues.sarif");
-plan("test") = TestTask(SourceFiles=["src", "tests/data"], CodeCoverageResults="results/cov.html", RunOnlyImpactedTests=true, ImpactedSince="main");
+plan("test") = TestTask(SourceFiles=["src", "tests/data"], ...
+    CodeCoverageResults="results/cov.html", ...
+    RunOnlyImpactedTests=true, ...
+    SinceRevision="main");
 % plan.DefaultTasks = ["modFiles" "check" "test"];
 plan.DefaultTasks = ["check" "test"];
 end

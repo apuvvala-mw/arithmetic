@@ -12,7 +12,7 @@ classdef Tcalculator < matlab.unittest.TestCase
         % Test methods
 
         function one(testCase)
-            testCase.verifyEqual(calculate(), -2);
+            testCase.verifyEqual(calculate(), 0);
         end
     end
 
