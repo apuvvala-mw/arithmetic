@@ -19,7 +19,7 @@ plan("check") = CodeIssuesTask(Results="issues.sarif");
 %     CodeCoverageResults="results/cov.html", ...
 %     RunOnlyImpactedTests=true);
 % plan.DefaultTasks = ["modFiles" "check" "test"];
-plan("test") = TestTask(SourceFiles=["src", "tests/data"]);
+plan("test") = TestTask(SourceFiles=["src", "tests/data"], TestResults="results/test-results.xml");
 
 plan.DefaultTasks = ["check" "test"];
 end

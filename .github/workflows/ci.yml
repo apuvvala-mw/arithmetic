@@ -58,8 +58,8 @@ jobs:
       - name: Run the default "test" task in the build file
         uses: matlab-actions/run-build@v2
         with:
-          tasks: modFiles test
-          #build-options: -parallel
+          tasks: modFiles test(RunOnlyImpactedTests=1)
+          build-options: -verbosity 3
 
       - name: Upload SARIF report
         uses: github/codeql-action/upload-sarif@v2
