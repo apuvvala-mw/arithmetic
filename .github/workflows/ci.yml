@@ -46,7 +46,8 @@ jobs:
       #    use-parallel: true
 
       - name: Cache buildtool artifacts
-        id: buildtool-cache
+        if: always()   # runs even if previous steps fail
+        id: buildtool-cache        
         uses: actions/cache@v4
         with:
             path: |
