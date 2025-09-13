@@ -18,7 +18,7 @@ permissions:
   security-events: write
   
 env:
-  PRODUCT_LIST: MATLAB MATLAB_Test Parallel_Computing_Toolbox
+  PRODUCT_LIST: MATLAB MATLAB_Test
   
 jobs:
   # This workflow contains a single job called "build"
@@ -38,13 +38,6 @@ jobs:
             release: latest-including-prerelease
             products: ${{ env.PRODUCT_LIST }}
 
-      # Runs a set of commands using the runners shell
-      #- name: Run all tests
-      #  uses: matlab-actions/run-tests@v2
-      #  with:
-      #    source-folder: src
-      #    use-parallel: true
-
       - name: Cache buildtool artifacts
         if: always()   # runs even if previous steps fail
         id: buildtool-cache        
@@ -59,20 +52,9 @@ jobs:
       - name: Run the default "test" task in the build file
         uses: matlab-actions/run-build@v2
         with:
-          tasks: modFiles test(RunOnlyImpactedTests=1)
+          tasks: test(RunOnlyImpactedTests=1)
           build-options: -verbosity 3
 
-      - name: Upload SARIF report
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: issues.sarif
-          
-      - name: Upload SARIF file
-        uses: actions/upload-artifact@v4
-        with:
-          name: SARIF report
-          path: issues.sarif
-    
     #- name: List contents of .buildtool
       #  run: ls -la .buildtool/**/*
       
