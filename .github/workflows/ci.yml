@@ -52,7 +52,7 @@ jobs:
             path: |
                 .buildtool
                 results
-            key: ${{ runner.os }}-buildtool-cache-${{ github.ref }}
+            key: ${{ runner.os }}-buildtool-cache-${{ github.ref_name }}
 
       # Run MATLAB build
       - name: Run the default "test" task in the build file
